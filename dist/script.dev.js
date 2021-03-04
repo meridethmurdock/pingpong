@@ -14,6 +14,11 @@ var p1Score = 0;
 var p2Score = 0;
 var winningScore = 3;
 var isGameOver = false;
+
+if (isGameOver === true) {
+  p1Display.classList.remove('p1Button-color');
+}
+
 p1Button.addEventListener('click', function () {
   if (!isGameOver) {
     p1Score++;
@@ -30,6 +35,10 @@ p1Button.addEventListener('click', function () {
       resetButton.textContent = 'Play Again';
       p1Button.textContent = 'Player 1 wins!';
       p2Button.textContent = 'Player 2 lost!';
+      p1Button.classList.remove('bubbly-button');
+      p2Button.classList.remove('bubbly-button');
+      p1Button.classList.remove('bubbly-button-dark-mode-p1');
+      p2Button.classList.remove('bubbly-button-dark-mode-p2');
     }
 
     p1Display.textContent = p1Score;
@@ -51,6 +60,10 @@ p2Button.addEventListener('click', function () {
       resetButton.textContent = 'Play Again';
       p2Button.textContent = 'Player 2 wins!';
       p1Button.textContent = 'Player 1 lost!';
+      p1Button.classList.remove('bubbly-button');
+      p2Button.classList.remove('bubbly-button');
+      p1Button.classList.remove('bubbly-button-dark-mode-p1');
+      p2Button.classList.remove('bubbly-button-dark-mode-p2');
     }
 
     p2Display.textContent = p2Score;
@@ -75,6 +88,18 @@ function reset() {
   p2Button.textContent = 'Player Two +1';
   p1Display.classList.remove('winner-dark', 'winner');
   p2Display.classList.remove('winner-dark', 'winner');
+
+  if (isDarkMode) {
+    p1Button.classList.remove('bubbly-button');
+    p2Button.classList.remove('bubbly-button');
+    p1Button.classList.add('bubbly-button-dark-mode-p1');
+    p2Button.classList.add('bubbly-button-dark-mode-p2');
+  } else {
+    p1Button.classList.remove('bubbly-button-dark-mode-p1');
+    p2Button.classList.remove('bubbly-button-dark-mode-p2');
+    p1Button.classList.add('bubbly-button');
+    p2Button.classList.add('bubbly-button');
+  }
 }
 
 var isDarkMode = false;
@@ -89,13 +114,18 @@ mode.addEventListener('click', function () {
     p1Button.classList.add('dark-mode-buttonsP1');
     p2Button.classList.remove('p2Button-color');
     p2Button.classList.add('dark-mode-buttonsP2');
-    p1Button.classList.remove('bubbly-button');
-    p1Button.classList.add('bubbly-button-dark-mode-p1');
-    p2Button.classList.add('bubbly-button-dark-mode-p2');
     scores.classList.add('dark-mode-score');
     title.classList.add('dark-mode-title');
     resetButton.classList.remove('reset-color');
     resetButton.classList.add('dark-mode-reset');
+
+    if (!isDarkMode && isGameOver === false) {
+      p1Button.classList.remove('bubbly-button');
+      p2Button.classList.remove('bubbly-button');
+      p1Button.classList.add('bubbly-button-dark-mode-p1');
+      p2Button.classList.add('bubbly-button-dark-mode-p2');
+    }
+
     isDarkMode = true;
   } else {
     body.classList.remove('dark-mode-body');
@@ -107,13 +137,18 @@ mode.addEventListener('click', function () {
     p1Button.classList.remove('dark-mode-buttonsP1');
     p2Button.classList.add('p2Button-color');
     p2Button.classList.remove('dark-mode-buttonsP2');
-    p1Button.classList.add('bubbly-button');
-    p1Button.classList.remove('bubbly-button-dark-mode-p1');
-    p2Button.classList.remove('bubbly-button-dark-mode-p2');
     scores.classList.remove('dark-mode-score');
     title.classList.remove('dark-mode-title');
     resetButton.classList.add('reset-color');
     resetButton.classList.remove('dark-mode-reset');
+
+    if (isDarkMode && isGameOver === false) {
+      p1Button.classList.add('bubbly-button');
+      p2Button.classList.add('bubbly-button');
+      p1Button.classList.remove('bubbly-button-dark-mode-p1');
+      p2Button.classList.remove('bubbly-button-dark-mode-p2');
+    }
+
     isDarkMode = false;
   }
 }); // bubbly button 

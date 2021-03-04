@@ -148,8 +148,6 @@ $baby-blue: #f8faff;
     }
 }
 
-
-
 .bubbly-button-dark-mode-p2 {
     position: relative;
     transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
@@ -221,6 +219,8 @@ $baby-blue: #f8faff;
     }
 }
 
+
+
 @keyframes topBubbles {
     0% {
         background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
@@ -268,9 +268,7 @@ DEE1C5 - moon outer
 FCFCFC - stars
 */
 
-body {
-    background-color: #F3F3F3;
-}
+
 
 .wrapper {
     text-align: center;
