@@ -1,0 +1,199 @@
+/* UNIVERSAL STYLES **************************************************/
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+button {
+    /* background-color: darken; */
+}
+
+/* DARK MODE STYLES **************************************************/
+
+.dark-mode-body {
+    background-color: rgb(14, 14, 14);
+}
+
+.dark-mode-text {
+    color: rgb(187, 187, 187);
+}
+
+.dark-mode-buttons {
+    width: 47vw;
+    height: 30vh;
+    font-size: 20px;
+    border-radius: 1rem;
+    border-style: none;
+    color: rgb(235, 235, 235);
+    font-size: 3rem;
+    transition: width .5s, box-shadow 1s;
+    margin: 1rem;
+}
+
+.dark-mode-buttonsP1 {
+    background-color: rgb(7, 41, 74);
+    box-shadow: 0px 0px 25px rgba(94, 111, 167, 0.927);
+}
+
+.dark-mode-buttonsP1:hover {
+    box-shadow: 0 0 60px rgb(81, 214, 255);
+}
+
+.dark-mode-buttonsP2 {
+    background-color: rgb(68, 38, 85);
+    box-shadow: 0px 0px 25px rgba(215, 131, 220, 0.927);
+}
+
+.dark-mode-buttonsP2:hover {
+    box-shadow: 0 0 50px hsl(297, 100%, 80%);
+}
+
+.dark-mode-score {
+    border: 1px rgb(63, 63, 63) solid;
+    border-radius: 1rem;
+    background-color: rgb(40, 40, 40);
+    box-shadow: 0px 0px 20px rgba(203, 203, 203, 0.927);
+    color: rgb(255, 255, 255);
+}
+
+.dark-mode-title {
+    background-color: rgb(31, 31, 31);
+    box-shadow: 0px 0px 20px rgba(113, 113, 113, 0.927);
+}
+
+.dark-mode-reset {
+    border: 1px solid white;
+    color: rgb(187, 187, 187);
+    box-shadow: 0px 0px 10px rgba(203, 203, 203, 0.927);
+}
+
+/* END OF DARK MODE STYLES  ******************************************/
+
+
+.winner {
+    color: rgb(101, 202, 101);
+}
+
+.dark-mode-winner-p1 {
+    color: rgb(88, 159, 180);
+}
+
+.dark-mode-winner-p2 {
+    color: hsl(297, 100%, 80%)
+}
+
+.red {
+    color: red !important;
+}
+
+#modeToggle {
+    float: right;
+    margin-top: -4rem;
+}
+
+#labelSelect {
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+}
+
+#playTo {
+    display: block;
+    margin: 1rem auto;
+    transform: scale(1.5);
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.title {
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+    transition: color .5s, font-size .6s;
+    margin: 3rem auto;
+    border-radius: 1rem;
+    width: 20%
+}
+
+.title-color {
+    background-color: rgb(232, 232, 232);
+    border: 1px black solid;
+}
+
+.reset {
+    display: block;
+    margin: 2rem auto;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    background-color: unset;
+    padding: .5rem 2rem;
+    transition: padding .3s;
+}
+
+.reset:hover {
+    cursor: pointer;
+    padding: .5rem 2.3rem;
+}
+
+.reset-color {
+    border: 1px solid black;
+}
+
+.p1Button,
+.p2Button {
+    width: 47vw;
+    height: 25vh;
+    font-size: 20px;
+    border-radius: 1rem;
+    border-style: none;
+    color: rgb(235, 235, 235);
+    font-size: 3rem;
+    transition: width .5s, box-shadow .7s, text-shadow 1s, font-size 0.6s, text-shadow .2s;
+    margin: 1rem;
+    text
+}
+
+.p1Button:hover,
+.p2Button:hover {
+    cursor: pointer;
+    width: 53vw;
+    text-shadow: 0px 0px 20px white;
+}
+
+.p1Button:active {
+    text-shadow: 0 0 10px white;
+}
+
+.p1Button-color:hover,
+.p2Button-color:hover {
+    box-shadow: 0px 10px 50px rgba(9, 189, 78, 0.927);
+}
+
+.p1Button-color {
+    background-color: rgb(52, 137, 222);
+}
+
+.p2Button-color {
+    background-color: rgb(255, 121, 121);
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    font-size: 6rem;
+    margin: 5rem auto;
+    width: 15%;
+    padding: 1rem;
+    text-shadow: 0 0 0px white;
+    transition: width .5s;
+    border: 1px black solid;
+    border-radius: 2rem;
+}
+
+.score:hover {
+    width: 18%;
+}
