@@ -197,3 +197,51 @@ button {
 .score:hover {
     width: 18%;
 }
+
+
+@media (max-width: 800px) {
+    .title {
+        font-size: 2rem;
+        width: 40%;
+    }
+
+    .score {
+        width: 30%;
+    }
+}
+
+@media (max-width: 500px) {
+    .score {
+        width: 30%;
+        padding: 1rem;
+        font-size: 3rem;
+        margin: 1rem auto;
+    }
+
+    .reset {
+        font-size: 1rem;
+    }
+
+    .title {
+        width: 30%;
+        font-size: 1.2rem;
+        ;
+    }
+
+    .toggle {
+        transform: scale(0.35);
+    }
+
+    .p1Button,
+    .p2Button {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 325px) {
+    .title {
+        font-size: 17px;
+    }
+
+
+}
