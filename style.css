@@ -111,7 +111,7 @@ button {
 
 .title {
     padding: 1.5rem;
-    font-size: 2rem;
+    font-size: 2em;
     text-align: center;
     transition: color .5s, font-size .6s;
     margin: 3rem auto;
@@ -224,7 +224,7 @@ button {
 
     .title {
         width: 30%;
-        font-size: 1.2rem;
+        font-size: 1rem;
         ;
     }
 
