@@ -232,13 +232,6 @@ FCFCFC - stars
           transform: scale(0.5);
 }
 
-@media (min-width: 3000px) {
-  .toggle {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-}
-
 @media (min-width: 2000px) {
   .toggle {
     -webkit-transform: scale(0.7);

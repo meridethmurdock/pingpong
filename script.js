@@ -1,83 +1,82 @@
 
-const title = document.querySelector('.title')
-const p1Button = document.querySelector('.p1Button');
-const p2Button = document.querySelector('.p2Button');
-const body = document.querySelector('body')
-const resetButton = document.querySelector('.reset');
-const p1Display = document.querySelector('#p1Display');
-const p2Display = document.querySelector('#p2Display')
-const scores = document.querySelector('.score')
-const winningScoreSelect = document.querySelector('#playTo');
-let mode = document.querySelector('.toggle-input');
+// player objects
 
-let p1Score = 0;
-let p2Score = 0;
+const p1 = {
+    score: 0,
+    button: document.querySelector('.p1Button'),
+    display: document.querySelector('.p1Display')
+}
+
+const p2 = {
+    score: 0,
+    button: document.querySelector('.p2Button'),
+    display: document.querySelector('.p2Display')
+}
+
+
+// customizing the winning score
+
 let winningScore = 3;
-let isGameOver = false;
-
-
-// scores 
-
-p1Button.addEventListener('click', function () {
-    if (!isGameOver) {
-        p1Score++;
-        if (p1Score === winningScore) {
-            isGameOver = true;
-            if (!isDarkMode) {
-                p1Display.classList.add('winner');
-            } else if (isDarkMode) {
-                p1Display.classList.add('dark-mode-winner-p1')
-            }
-            resetButton.textContent = 'Play Again';
-            p1Button.textContent = 'Player 1 wins!'
-            p2Button.textContent = 'Player 2 lost!'
-            p1Button.classList.remove('bubbly-button')
-            p2Button.classList.remove('bubbly-button')
-        }
-        p1Display.textContent = p1Score;
-    }
-})
-
-p2Button.addEventListener('click', function () {
-    if (!isGameOver) {
-        p2Score++;
-        if (p2Score === winningScore) {
-            isGameOver = true;
-            if (!isDarkMode) {
-                p2Display.classList.add('winner');
-            } else if (isDarkMode) {
-                p2Display.classList.add('dark-mode-winner-p2')
-            }
-            resetButton.textContent = 'Play Again';
-            p2Button.textContent = 'Player 2 wins!'
-            p1Button.textContent = 'Player 1 lost!'
-            p1Button.classList.remove('bubbly-button')
-            p2Button.classList.remove('bubbly-button')
-        }
-        p2Display.textContent = p2Score;
-    }
-})
+const winningScoreSelect = document.querySelector('#playTo');
 
 winningScoreSelect.addEventListener('change', function () {
     winningScore = parseInt(this.value);
     reset();
 })
 
+
+// scoring & game over 
+
+let isGameOver = false;
+
+function updateScores(player, opponent) {
+    if (!isGameOver) {
+        player.score++;
+        if (player.score === winningScore) {
+            isGameOver = true;
+            if (!isDarkMode) {
+                player.display.classList.add('winner');
+            } else if (isDarkMode && player === p1) {
+                player.display.classList.add('dark-mode-winner-p1')
+            } else if (isDarkMode && player === p2) {
+                player.display.classList.add('dark-mode-winner-p2')
+            }
+            resetButton.textContent = 'Play Again';
+            player.button.textContent = 'You win!'
+            opponent.button.textContent = 'Better luck next time!'
+            player.button.classList.remove('bubbly-button')
+            opponent.button.classList.remove('bubbly-button')
+        }
+        player.display.textContent = player.score;
+    }
+}
+
+p1.button.addEventListener('click', function () {
+    updateScores(p1, p2)
+})
+
+p2.button.addEventListener('click', function () {
+    updateScores(p2, p1)
+})
+
+
+// reset button
+
+const resetButton = document.querySelector('.reset');
+
 resetButton.addEventListener('click', reset)
 
 function reset() {
     isGameOver = false;
-    p1Score = 0;
-    p2Score = 0;
-    p1Display.textContent = '0';
-    p2Display.textContent = '0';
-    p1Display.classList.remove('winner', 'dark-mode-winner-p1');
-    p2Display.classList.remove('winner', 'dark-mode-winner-p2');
-    resetButton.textContent = 'Reset';
-    p1Button.textContent = 'Player One +1'
-    p2Button.textContent = 'Player Two +1'
-    p1Button.classList.add('bubbly-button')
-    p2Button.classList.add('bubbly-button')
+    p1.button.textContent = 'Player One +1'
+    p2.button.textContent = 'Player Two +1'
+    for (let p of [p1, p2]) {
+        p.score = 0;
+        p.display.textContent = 0;
+        p.display.classList.remove('winner', 'dark-mode-winner-p1', 'dark-mode-winner-p2')
+        p.button.classList.add('bubbly-button')
+        resetButton.textContent = 'Reset';
+    }
 }
 
 
@@ -103,6 +102,9 @@ for (var i = 0; i < bubblyButtons.length; i++) {
 
 
 // dark mode 
+
+let mode = document.querySelector('.toggle-input');
+
 
 function presetScheme() {
     var schemePreference = localStorage.getItem('theme');
