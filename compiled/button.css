@@ -1,27 +1,36 @@
 .bubbly-button {
   position: relative;
+  -webkit-transition: -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
+  transition: -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
   transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s, -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
 }
+
 .bubbly-button:focus {
   outline: 0;
 }
+
 .bubbly-button:before, .bubbly-button:after {
-  transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
   position: absolute;
-  content: "";
+  content: '';
   width: 110%;
   height: 100%;
   left: 0%;
   z-index: -1000;
+  -webkit-transition: all ease-in-out 4s;
   transition: all ease-in-out 4s;
   background-repeat: no-repeat;
 }
+
 .bubbly-button:before {
   display: none;
   top: -75%;
   background-image: radial-gradient(circle, #b7f05c 20%, transparent 20%), radial-gradient(circle, transparent 20%, #b7f05c 20%, transparent 30%), radial-gradient(circle, #b7f05c 20%, transparent 20%), radial-gradient(circle, #b7f05c 20%, transparent 20%), radial-gradient(circle, transparent 10%, #b7f05c 15%, transparent 20%), radial-gradient(circle, #b7f05c 20%, transparent 20%), radial-gradient(circle, #b7f05c 20%, transparent 20%), radial-gradient(circle, #b7f05c 20%, transparent 20%), radial-gradient(circle, #b7f05c 20%, transparent 20%);
   background-size: 5% 5%, 10% 10%, 7% 7%, 10% 10%, 9% 9%, 5% 5%, 8% 8%, 5% 5%, 9% 9%;
 }
+
 .bubbly-button:after {
   display: none;
   bottom: -75%;
@@ -29,39 +38,52 @@
   background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
   background-size: 1% 1%, 2% 2%, 8% 8%, 2% 2%, 5% 5%, 10% 10%, 20% 20%;
 }
+
 .bubbly-button.animate:before {
   display: block;
-  animation: topBubbles ease-in-out 0.75s forwards;
+  -webkit-animation: topBubbles ease-in-out 0.75s forwards;
+          animation: topBubbles ease-in-out 0.75s forwards;
 }
+
 .bubbly-button.animate:after {
   display: block;
-  animation: bottomBubbles ease-in-out 0.75s forwards;
+  -webkit-animation: bottomBubbles ease-in-out 0.75s forwards;
+          animation: bottomBubbles ease-in-out 0.75s forwards;
 }
 
 html.darkmode .bubbly-button.p1Button {
   position: relative;
+  -webkit-transition: -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
+  transition: -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
   transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s, -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
 }
+
 html.darkmode .bubbly-button.p1Button:focus {
   outline: 0;
 }
+
 html.darkmode .bubbly-button.p1Button:before, html.darkmode .bubbly-button.p1Button:after {
-  transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
   position: absolute;
-  content: "";
+  content: '';
   width: 110%;
   height: 100%;
   left: 0%;
   z-index: -1000;
+  -webkit-transition: all ease-in-out 4s;
   transition: all ease-in-out 4s;
   background-repeat: no-repeat;
 }
+
 html.darkmode .bubbly-button.p1Button:before {
   display: none;
   top: -75%;
   background-image: radial-gradient(circle, rgba(94, 123, 167, 0.927) 20%, transparent 20%), radial-gradient(circle, transparent 20%, rgba(94, 123, 167, 0.927) 20%, transparent 30%), radial-gradient(circle, rgba(94, 123, 167, 0.927) 20%, transparent 20%), radial-gradient(circle, rgba(94, 123, 167, 0.927) 20%, transparent 20%), radial-gradient(circle, transparent 10%, rgba(94, 123, 167, 0.927) 15%, transparent 20%), radial-gradient(circle, rgba(94, 123, 167, 0.927) 20%, transparent 20%), radial-gradient(circle, rgba(94, 123, 167, 0.927) 20%, transparent 20%), radial-gradient(circle, rgba(94, 123, 167, 0.927) 20%, transparent 20%), radial-gradient(circle, rgba(94, 123, 167, 0.927) 20%, transparent 20%);
   background-size: 5% 5%, 10% 10%, 7% 7%, 10% 10%, 9% 9%, 5% 5%, 8% 8%, 5% 5%, 9% 9%;
 }
+
 html.darkmode .bubbly-button.p1Button:after {
   display: none;
   bottom: -75%;
@@ -69,39 +91,52 @@ html.darkmode .bubbly-button.p1Button:after {
   background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
   background-size: 1% 1%, 2% 2%, 8% 8%, 2% 2%, 5% 5%, 10% 10%, 20% 20%;
 }
+
 html.darkmode .bubbly-button.p1Button.animate:before {
   display: block;
-  animation: topBubbles ease-in-out 0.75s forwards;
+  -webkit-animation: topBubbles ease-in-out 0.75s forwards;
+          animation: topBubbles ease-in-out 0.75s forwards;
 }
+
 html.darkmode .bubbly-button.p1Button.animate:after {
   display: block;
-  animation: bottomBubbles ease-in-out 0.75s forwards;
+  -webkit-animation: bottomBubbles ease-in-out 0.75s forwards;
+          animation: bottomBubbles ease-in-out 0.75s forwards;
 }
 
 html.darkmode .bubbly-button.p2Button {
   position: relative;
+  -webkit-transition: -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
+  transition: -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
   transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s, -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
 }
+
 html.darkmode .bubbly-button.p2Button:focus {
   outline: 0;
 }
+
 html.darkmode .bubbly-button.p2Button:before, html.darkmode .bubbly-button.p2Button:after {
-  transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
   position: absolute;
-  content: "";
+  content: '';
   width: 110%;
   height: 90%;
   left: 0%;
   z-index: -1000;
+  -webkit-transition: all ease-in-out 4s;
   transition: all ease-in-out 4s;
   background-repeat: no-repeat;
 }
+
 html.darkmode .bubbly-button.p2Button:before {
   display: none;
   top: -75%;
   background-image: radial-gradient(circle, rgba(158, 78, 158, 0.927) 20%, transparent 20%), radial-gradient(circle, transparent 20%, rgba(158, 78, 158, 0.927) 20%, transparent 30%), radial-gradient(circle, rgba(158, 78, 158, 0.927) 20%, transparent 20%), radial-gradient(circle, rgba(158, 78, 158, 0.927) 20%, transparent 20%), radial-gradient(circle, transparent 10%, rgba(158, 78, 158, 0.927) 15%, transparent 20%), radial-gradient(circle, rgba(158, 78, 158, 0.927) 20%, transparent 20%), radial-gradient(circle, rgba(158, 78, 158, 0.927) 20%, transparent 20%), radial-gradient(circle, rgba(158, 78, 158, 0.927) 20%, transparent 20%), radial-gradient(circle, rgba(158, 78, 158, 0.927) 20%, transparent 20%);
   background-size: 5% 5%, 10% 10%, 7% 7%, 10% 10%, 9% 9%, 5% 5%, 8% 8%, 5% 5%, 9% 9%;
 }
+
 html.darkmode .bubbly-button.p2Button:after {
   display: none;
   bottom: -75%;
@@ -109,13 +144,29 @@ html.darkmode .bubbly-button.p2Button:after {
   background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
   background-size: 1% 1%, 2% 2%, 8% 8%, 2% 2%, 5% 5%, 10% 10%, 20% 20%;
 }
+
 html.darkmode .bubbly-button.p2Button.animate:before {
   display: block;
-  animation: topBubbles ease-in-out 0.75s forwards;
+  -webkit-animation: topBubbles ease-in-out 0.75s forwards;
+          animation: topBubbles ease-in-out 0.75s forwards;
 }
+
 html.darkmode .bubbly-button.p2Button.animate:after {
   display: block;
-  animation: bottomBubbles ease-in-out 0.75s forwards;
+  -webkit-animation: bottomBubbles ease-in-out 0.75s forwards;
+          animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@-webkit-keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+  }
 }
 
 @keyframes topBubbles {
@@ -129,6 +180,19 @@ html.darkmode .bubbly-button.p2Button.animate:after {
     background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
   }
 }
+
+@-webkit-keyframes bottomBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+  }
+}
+
 @keyframes bottomBubbles {
   0% {
     background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
@@ -140,6 +204,7 @@ html.darkmode .bubbly-button.p2Button.animate:after {
     background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
   }
 }
+
 /*
 F5EB42 - sun inner
 E4C74D - sun outer
@@ -163,40 +228,51 @@ FCFCFC - stars
   margin-left: 100px;
   padding: 4px;
   border-radius: 40px;
-  transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
 }
+
 @media (min-width: 3000px) {
   .toggle {
-    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
   }
 }
+
 @media (min-width: 2000px) {
   .toggle {
-    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
     top: -16px;
     left: -90px;
   }
 }
+
 @media (max-width: 1200px) {
   .toggle {
-    transform: scale(0.3);
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
   }
 }
+
 @media (max-width: 500px) {
   .toggle {
-    transform: scale(0.3);
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
   }
 }
+
 @media (max-width: 300px) {
   .toggle {
-    transform: scale(0.25);
+    -webkit-transform: scale(0.25);
+            transform: scale(0.25);
     left: 17px;
   }
 }
 
 .toggle:before,
 .toggle:after {
-  content: "";
+  content: '';
   display: table;
 }
 
@@ -213,6 +289,7 @@ FCFCFC - stars
   background-color: #C0E6F6;
   border-radius: 40px;
   border: 4px solid #81C0D5;
+  -webkit-transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -236,6 +313,7 @@ FCFCFC - stars
   background-color: #F5EB42;
   border: 4px solid #E4C74D;
   border-radius: 50%;
+  -webkit-transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -249,11 +327,14 @@ FCFCFC - stars
   border: 8px solid #D4D4D2;
   border-radius: 20px;
   background-color: #fff;
-  transform: scale(0.4);
+  -webkit-transform: scale(0.4);
+          transform: scale(0.4);
+  -webkit-transition: all 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: all 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .toggle-switch-figure:after {
-  content: "";
+  content: '';
   display: block;
   position: relative;
   top: -65px;
@@ -264,11 +345,13 @@ FCFCFC - stars
   border-radius: 100%;
   border-right-color: transparent;
   border-bottom-color: transparent;
-  transform: rotateZ(70deg);
+  -webkit-transform: rotateZ(70deg);
+          transform: rotateZ(70deg);
   background-color: #fff;
 }
+
 .toggle-switch-figure:before {
-  content: "";
+  content: '';
   display: block;
   position: relative;
   top: -25px;
@@ -279,12 +362,13 @@ FCFCFC - stars
   border-radius: 100%;
   border-right-color: transparent;
   border-bottom-color: transparent;
-  transform: rotateZ(30deg);
+  -webkit-transform: rotateZ(30deg);
+          transform: rotateZ(30deg);
   background-color: #fff;
 }
 
 .toggle-switch-figureAlt {
-  content: "";
+  content: '';
   position: absolute;
   top: 5px;
   left: 2px;
@@ -293,13 +377,16 @@ FCFCFC - stars
   background-color: #EFEEDA;
   border-radius: 100%;
   border: 4px solid #DEE1C5;
-  box-shadow: 42px -7px 0 -3px #FCFCFC, 75px -10px 0 -3px #FCFCFC, 54px 4px 0 -4px #FCFCFC, 83px 7px 0 -2px #FCFCFC, 63px 18px 0 -4px #FCFCFC, 44px 28px 0 -2px #FCFCFC, 78px 23px 0 -3px #FCFCFC;
+  -webkit-box-shadow: 42px -7px 0 -3px #FCFCFC, 75px -10px 0 -3px #FCFCFC, 54px 4px 0 -4px #FCFCFC, 83px 7px 0 -2px #FCFCFC, 63px 18px 0 -4px #FCFCFC, 44px 28px 0 -2px #FCFCFC, 78px 23px 0 -3px #FCFCFC;
+          box-shadow: 42px -7px 0 -3px #FCFCFC, 75px -10px 0 -3px #FCFCFC, 54px 4px 0 -4px #FCFCFC, 83px 7px 0 -2px #FCFCFC, 63px 18px 0 -4px #FCFCFC, 44px 28px 0 -2px #FCFCFC, 78px 23px 0 -3px #FCFCFC;
+  -webkit-transition: all 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: all 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform: scale(0);
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 .toggle-switch-figureAlt:before {
-  content: "";
+  content: '';
   position: absolute;
   top: -6px;
   left: 18px;
@@ -311,7 +398,7 @@ FCFCFC - stars
 }
 
 .toggle-switch-figureAlt:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 19px;
   left: 15px;
@@ -336,9 +423,12 @@ FCFCFC - stars
 .toggle-input:checked ~ .toggle-switch .toggle-switch-figure {
   margin-left: 40px;
   opacity: 0;
-  transform: scale(0.1);
+  -webkit-transform: scale(0.1);
+          transform: scale(0.1);
 }
 
 .toggle-input:checked ~ .toggle-switch .toggle-switch-figureAlt {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
+/*# sourceMappingURL=button.css.map */

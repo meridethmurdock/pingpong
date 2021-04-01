@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scorekeeper</title>
-        <link rel="stylesheet" href="button.css">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scorekeeper</title>
+  <link rel="stylesheet" href="compiled/button.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <h1 class="title title-color">Scorekeeper</h1>
+  <h1 class="title title-color">Scorekeeper</h1>
 
-    
-<div class="wrapper">
-  <div class="toggle">
-    <input class="toggle-input" type="checkbox" />
-    <div class="toggle-bg"></div>
-    <div class="toggle-switch">
-      <div class="toggle-switch-figure"></div>
-      <div class="toggle-switch-figureAlt"></div>
-    </div>  
-  </div>
-</div>
-
-
-    <label for="quantity" id="labelSelect" >Playing To: </label>
-    <input type="number" placeholder="3" id="playTo" name="quantity" min="1" max="500">
-
-    <button class="reset reset-color">Reset</button>
-
-        <h2 class="score"><span id ="p1Display">0 </span> - <span id="p2Display"> 0</span></h1>
-
-    <div class="buttons ">
-        <button class="p1Button bubbly-button p1Button-color">Player One +1</button>
-        <button class="p2Button bubbly-button p2Button-color">Player Two +1</button>
+  <div class="wrapper">
+    <div class="toggle">
+      <input class="toggle-input" type="checkbox" />
+      <div class="toggle-bg"></div>
+      <div class="toggle-switch">
+        <div class="toggle-switch-figure"></div>
+        <div class="toggle-switch-figureAlt"></div>
+      </div>
     </div>
-    
-    
+  </div>
+
+  <label for="quantity" id="labelSelect">Playing To:</label>
+  <input type="number" placeholder="3" id="playTo" name="quantity" min="1" max="500">
+
+  <button class="reset reset-color">Reset</button>
+
+  <h2 class="score"><span id="p1Display">0 </span> - <span id="p2Display"> 0</span></h1>
+
+    <div class="buttons">
+      <button class="p1Button bubbly-button p1Button-color">Player One +1</button>
+      <button class="p2Button bubbly-button p2Button-color">Player Two +1</button>
+    </div>
+
+
     <script src="script.js"></script>
 </body>
+
 </html>
+
+<!-- sizing on mobile, bubbles going out of frame on full size, NEGATIVE MARGINS LOL  -->

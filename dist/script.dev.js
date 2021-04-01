@@ -13,11 +13,7 @@ var mode = document.querySelector('.toggle-input');
 var p1Score = 0;
 var p2Score = 0;
 var winningScore = 3;
-var isGameOver = false;
-
-if (isGameOver === true) {
-  p1Display.classList.remove('p1Button-color');
-}
+var isGameOver = false; // scores 
 
 p1Button.addEventListener('click', function () {
   if (!isGameOver) {
@@ -37,8 +33,6 @@ p1Button.addEventListener('click', function () {
       p2Button.textContent = 'Player 2 lost!';
       p1Button.classList.remove('bubbly-button');
       p2Button.classList.remove('bubbly-button');
-      p1Button.classList.remove('bubbly-button-dark-mode-p1');
-      p2Button.classList.remove('bubbly-button-dark-mode-p2');
     }
 
     p1Display.textContent = p1Score;
@@ -62,8 +56,6 @@ p2Button.addEventListener('click', function () {
       p1Button.textContent = 'Player 1 lost!';
       p1Button.classList.remove('bubbly-button');
       p2Button.classList.remove('bubbly-button');
-      p1Button.classList.remove('bubbly-button-dark-mode-p1');
-      p2Button.classList.remove('bubbly-button-dark-mode-p2');
     }
 
     p2Display.textContent = p2Score;
@@ -86,72 +78,10 @@ function reset() {
   resetButton.textContent = 'Reset';
   p1Button.textContent = 'Player One +1';
   p2Button.textContent = 'Player Two +1';
-  p1Display.classList.remove('winner-dark', 'winner');
-  p2Display.classList.remove('winner-dark', 'winner');
+  p1Button.classList.add('bubbly-button');
+  p2Button.classList.add('bubbly-button');
+} // bubbly button 
 
-  if (isDarkMode) {
-    p1Button.classList.remove('bubbly-button');
-    p2Button.classList.remove('bubbly-button');
-    p1Button.classList.add('bubbly-button-dark-mode-p1');
-    p2Button.classList.add('bubbly-button-dark-mode-p2');
-  } else {
-    p1Button.classList.remove('bubbly-button-dark-mode-p1');
-    p2Button.classList.remove('bubbly-button-dark-mode-p2');
-    p1Button.classList.add('bubbly-button');
-    p2Button.classList.add('bubbly-button');
-  }
-}
-
-var isDarkMode = false;
-mode.addEventListener('click', function () {
-  if (isDarkMode === false) {
-    body.classList.add('dark-mode-body');
-    scores.classList.add('dark-mode-text');
-    title.classList.add('dark-mode-text');
-    title.classList.remove('title-color');
-    labelSelect.classList.add('dark-mode-text');
-    p1Button.classList.remove('p1Button-color');
-    p1Button.classList.add('dark-mode-buttonsP1');
-    p2Button.classList.remove('p2Button-color');
-    p2Button.classList.add('dark-mode-buttonsP2');
-    scores.classList.add('dark-mode-score');
-    title.classList.add('dark-mode-title');
-    resetButton.classList.remove('reset-color');
-    resetButton.classList.add('dark-mode-reset');
-
-    if (!isDarkMode && isGameOver === false) {
-      p1Button.classList.remove('bubbly-button');
-      p2Button.classList.remove('bubbly-button');
-      p1Button.classList.add('bubbly-button-dark-mode-p1');
-      p2Button.classList.add('bubbly-button-dark-mode-p2');
-    }
-
-    isDarkMode = true;
-  } else {
-    body.classList.remove('dark-mode-body');
-    scores.classList.remove('dark-mode-text');
-    title.classList.remove('dark-mode-text');
-    title.classList.add('title-color');
-    labelSelect.classList.remove('dark-mode-text');
-    p1Button.classList.add('p1Button-color');
-    p1Button.classList.remove('dark-mode-buttonsP1');
-    p2Button.classList.add('p2Button-color');
-    p2Button.classList.remove('dark-mode-buttonsP2');
-    scores.classList.remove('dark-mode-score');
-    title.classList.remove('dark-mode-title');
-    resetButton.classList.add('reset-color');
-    resetButton.classList.remove('dark-mode-reset');
-
-    if (isDarkMode && isGameOver === false) {
-      p1Button.classList.add('bubbly-button');
-      p2Button.classList.add('bubbly-button');
-      p1Button.classList.remove('bubbly-button-dark-mode-p1');
-      p2Button.classList.remove('bubbly-button-dark-mode-p2');
-    }
-
-    isDarkMode = false;
-  }
-}); // bubbly button 
 
 var animateButton = function animateButton(e) {
   e.preventDefault; //reset animation
@@ -167,44 +97,44 @@ var bubblyButtons = document.getElementsByClassName("bubbly-button");
 
 for (var i = 0; i < bubblyButtons.length; i++) {
   bubblyButtons[i].addEventListener('click', animateButton, false);
-} // for buttons in dark mode 
+} // dark mode 
 
 
-var animateButton = function animateButton(e) {
-  e.preventDefault; //reset animation
+function presetScheme() {
+  var schemePreference = localStorage.getItem('theme');
 
-  e.target.classList.remove('animate');
-  e.target.classList.add('animate');
-  setTimeout(function () {
-    e.target.classList.remove('animate');
-  }, 700);
-};
+  if (schemePreference === 'dark') {
+    addDarkMode();
+    isDarkMode = true;
+    mode.checked = true;
+  } else {
+    isDarkMode = false;
+  }
 
-var bubblyButtonsDark = document.getElementsByClassName("bubbly-button-dark-mode");
-
-for (var i = 0; i < bubblyButtonsDark.length; i++) {
-  bubblyButtonsDark[i].addEventListener('click', animateButton, false);
+  mode.addEventListener('click', function (e) {
+    toggleTheme(e);
+  });
 }
 
-var animateButton = function animateButton(e) {
-  e.preventDefault; //reset animation
+;
+presetScheme();
 
-  e.target.classList.remove('animate');
-  e.target.classList.add('animate');
-  setTimeout(function () {
-    e.target.classList.remove('animate');
-  }, 700);
-};
-
-var bubblyButtonsDarkP2 = document.getElementsByClassName("bubbly-button-dark-mode");
-
-for (var i = 0; i < bubblyButtonsDarkP2.length; i++) {
-  bubblyButtonsDarkP2[i].addEventListener('click', animateButton, false);
+function toggleTheme(e) {
+  if (e.target.checked) {
+    addDarkMode();
+    localStorage.setItem('theme', 'dark');
+  } else {
+    removeDarkMode();
+    localStorage.setItem('theme', 'light');
+  }
 }
 
-var toggle = document.querySelector('.toggle-input');
-var initialState = localStorage.getItem('toggleState') == 'true';
-toggle.checked = initialState;
-toggle.addEventListener('change', function () {
-  localStorage.setItem('toggleState', toggle.checked);
-});
+function addDarkMode() {
+  document.documentElement.classList.add('darkmode');
+  isDarkMode = true;
+}
+
+function removeDarkMode() {
+  document.documentElement.classList.remove('darkmode');
+  isDarkMode = false;
+}
